@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="21" author="msaddarov">
+  
+    <comment>Inserting address types</comment>
+    
+    <insert tableName="address_type">
+      <column name="id" value="1"/>
+      <column name="name" value="billing"/>
+    </insert>
+
+    <insert tableName="address_type">
+      <column name="id" value="2"/>
+      <column name="name" value="home"/>
+    </insert>
+    
+    <insert tableName="address_type">
+      <column name="id" value="3"/>
+      <column name="name" value="work"/>
+    </insert>
+    
+    <insert tableName="address_type">
+      <column name="id" value="4"/>
+      <column name="name" value="delivery"/>
+    </insert>
+        	  	  
+        	  	  
+ 	<comment>Inserting sample address</comment>
+ 
+    
+    <insert tableName="address">
+      <column name="id" value="1"/>
+      <column name="country_code" value="USA"/>
+      <column name="region" value="CA"/>
+      <column name="municipality" value="Irvine"/>
+      <column name="street" value="10th Street"/>
+      <column name="post_office_box" value="92618"/>
+      <column name="address_type_id" value="1"/>      
+    </insert>
+        
+    <insert tableName="address">
+      <column name="id" value="2"/>
+      <column name="country_code" value="USA"/>
+      <column name="region" value="CA"/>
+      <column name="municipality" value="Los Alamos"/>
+      <column name="street" value="1st Street"/>
+      <column name="post_office_box" value="92618"/>
+      <column name="address_type_id" value="1"/>      
+    </insert>
+        
+    <insert tableName="address">
+      <column name="id" value="3"/>
+      <column name="country_code" value="USA"/>
+      <column name="region" value="AL"/>
+      <column name="municipality" value="Mobile"/>
+      <column name="street" value="12th Avenue"/>
+      <column name="post_office_box" value="36610"/>
+      <column name="address_type_id" value="1"/>      
+    </insert>
+         	  	  
+  </changeSet>
+</databaseChangeLog>

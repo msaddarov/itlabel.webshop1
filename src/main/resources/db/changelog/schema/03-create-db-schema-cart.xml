@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="03" author="msaddarov">
+    
+    <createTable tableName="cart_status" remarks="shopping cart status">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="code" type="varchar(10)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="description" type="varchar(400)">
+        <constraints nullable="false" unique="false"/>
+      </column>      
+    </createTable>   
+         
+    <createTable tableName="cart" remarks="shopping care">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="customer_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="cart_status_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>      
+       <column name="created_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+       <column name="updated_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+    </createTable>
+    
+    <addForeignKeyConstraint baseTableName="cart" baseColumnNames="cart_status_id"
+      constraintName="cart_status_id_fk"
+      referencedTableName="cart_status" referencedColumnNames="id"/>      
+   
+       
+    <addForeignKeyConstraint baseTableName="cart" baseColumnNames="customer_id"
+      constraintName="customer_id_fk"
+      referencedTableName="customer" referencedColumnNames="id"/>    
+         
+      
+    <createTable tableName="cart_product" remarks="shopping cart products list">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="cart_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="product_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="qty" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>
+    </createTable>
+    
+    <addForeignKeyConstraint baseTableName="cart_product" baseColumnNames="cart_id"
+      constraintName="cart_id_fk"
+      referencedTableName="cart" referencedColumnNames="id"/>    
+      
+    <addForeignKeyConstraint baseTableName="cart_product" baseColumnNames="product_id"
+      constraintName="product_id_fk"
+      referencedTableName="product" referencedColumnNames="id"/>     
+      
+      
+
+      
+  </changeSet>
+</databaseChangeLog>      

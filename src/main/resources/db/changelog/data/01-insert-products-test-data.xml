@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="02" author="msaddarov">
+  
+    <comment>Inserting categories</comment>
+    
+    <insert tableName="category">
+      <column name="id" valueNumeric="1"/>
+      <column name="parent_id" valueNumeric="0"/>
+      <column name="name" value="electronics"/>
+      <column name="depth" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+    </insert>
+
+	    <insert tableName="category">
+	      <column name="id" valueNumeric="3"/>
+	      <column name="parent_id" valueNumeric="1"/>
+	      <column name="name" value="phones"/>
+	      <column name="depth" valueNumeric="1"/>
+	      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+	      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+	    </insert> 
+	   
+    <insert tableName="category">
+      <column name="id" valueNumeric="2"/>
+      <column name="parent_id" valueNumeric="0"/>
+      <column name="name" value="sports"/>
+      <column name="depth" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-03-02T11:07:52"/>
+      <column name="updated_at" valueDate="2018-04-05T09:11:35"/>
+    </insert> 
+ 
+  <comment>Inserting manufacturers</comment>
+ 
+  <insert tableName="manufacturer">
+      <column name="id" valueNumeric="1"/>
+      <column name="name" value="Company XYZ"/>
+      <column name="logo" value="/static/manufacturers/1.jpg"/>
+      <column name="description" value="Company XYZ manufacturer"/>
+    </insert> 
+ 
+ 
+   <comment>Inserting products</comment>
+    
+    <insert tableName="product">
+      <column name="id" valueNumeric="1"/>
+      <column name="name" value="Makeblock Neuron Inventor Electronic Kit"/>
+      <column name="sku" value="EL-UR-12-FB"/>
+      <column name="description" value="Makeblock Neuron Inventor Electronic Kit"/>
+	  <column name="price" valueNumeric="110.59"/>
+	  <column name="stock" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="manufacturer_id" valueNumeric="1"/>
+    </insert>
+    <insert tableName="product">
+      <column name="id" valueNumeric="2"/>
+      <column name="name" value="Snap Circuits Jr. SC-100"/>
+      <column name="sku" value="EL-UR-12-F1"/>
+      <column name="description" value="Snap Circuits Jr. SC-100"/>
+	  <column name="price" valueNumeric="23.82"/>
+	  <column name="stock" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="manufacturer_id" valueNumeric="1"/>
+    </insert>    
+    <insert tableName="product">
+      <column name="id" valueNumeric="3"/>
+      <column name="name" value="OnePlus 6T"/>
+      <column name="sku" value="EL-UR-12-F2"/>
+      <column name="description" value="OnePlus 6T 8 GB RAM 128 GB UK SIM-Free Smartphone - Mirror Black (2 Year Manufacturer Warranty)"/>
+	  <column name="price" valueNumeric="529.82"/>
+	  <column name="stock" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="manufacturer_id" valueNumeric="1"/>
+    </insert>    
+    <insert tableName="product">
+      <column name="id" valueNumeric="4"/>
+      <column name="name" value="Cebé Dusk Ski Helmet"/>
+      <column name="sku" value="SP-I2-JB-23"/>
+      <column name="description" value="Protection is at the heart of our priorities. That’s the reason why Cébé develops a full range of ski helmets, always going further in terms of technology. This year by adding Mips and Boa 360, and after reviewing our entire fit range, we ensure the best symbiosis between innovation, protection, comfort and style. Cébé’s helmets will definitely be your ally in all your activities to make you more confident."/>
+	  <column name="price" valueNumeric="529.82"/>
+	  <column name="stock" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="manufacturer_id" valueNumeric="1"/>
+    </insert>          
+   
+     <comment>mapping products to categories</comment>
+    
+     <insert tableName="category_product">
+      <column name="id" valueNumeric="1"/>
+      <column name="product_id" valueNumeric="1"/>
+      <column name="category_id" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+	</insert>
+     <insert tableName="category_product">
+      <column name="id" valueNumeric="2"/>
+      <column name="product_id" valueNumeric="2"/>
+      <column name="category_id" valueNumeric="1"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+	</insert>  	  
+     <insert tableName="category_product">
+      <column name="id" valueNumeric="3"/>
+      <column name="product_id" valueNumeric="3"/>
+      <column name="category_id" valueNumeric="3"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+	</insert>  	 
+     <insert tableName="category_product">
+      <column name="id" valueNumeric="4"/>
+      <column name="product_id" valueNumeric="4"/>
+      <column name="category_id" valueNumeric="2"/>
+      <column name="created_at" valueDate="2018-08-09T13:14:15"/>
+      <column name="updated_at" valueDate="2018-08-09T13:14:15"/>
+	</insert> 
+	
+	
+	  <comment>Inserting product images</comment>
+ 
+  <insert tableName="product_image">
+      <column name="id" valueNumeric="1"/>
+      <column name="product_id" valueNumeric="1"/>
+      <column name="image" value="/static/products/stub.jpg"/>
+      <column name="sort_order" valueNumeric="1"/>
+    </insert> 
+  <insert tableName="product_image">
+      <column name="id" valueNumeric="2"/>
+      <column name="product_id" valueNumeric="1"/>
+      <column name="image" value="/static/products/stub.jpg"/>
+      <column name="sort_order" valueNumeric="2"/>
+    </insert> 
+     
+  	<insert tableName="product_image">
+      <column name="id" valueNumeric="3"/>
+      <column name="product_id" valueNumeric="2"/>
+      <column name="image" value="/static/products/stub.jpg"/>
+      <column name="sort_order" valueNumeric="1"/>
+    </insert> 
+    <insert tableName="product_image">
+      <column name="id" valueNumeric="4"/>
+      <column name="product_id" valueNumeric="3"/>
+      <column name="image" value="/static/products/stub.jpg"/>
+      <column name="sort_order" valueNumeric="1"/>
+    </insert> 
+  	 	  	  
+  </changeSet>
+</databaseChangeLog>

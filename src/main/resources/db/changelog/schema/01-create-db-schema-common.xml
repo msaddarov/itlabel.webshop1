@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="20" author="msaddarov">
+  
+   <createTable tableName="address_type" remarks="Types of addresses">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="name" type="varchar(10)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+   </createTable>
+  
+   <createTable tableName="address" remarks="various addresses">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="country_code" type="varchar(3)">  <!--  ISO_3166_A3  -->
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="region" type="varchar(120)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>
+      <column name="region2" type="varchar(120)"> 
+        <constraints nullable="true" unique="false"/>
+      </column> 
+      <column name="municipality" type="varchar(200)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>
+      <column name="address_line" type="varchar(200)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>
+	  <column name="address_line2" type="varchar(200)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>     
+	  <column name="street" type="varchar(100)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>
+	  <column name="building_number" type="varchar(100)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>
+	  <column name="unit" type="varchar(50)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>
+	  <column name="post_office_box" type="varchar(50)"> 
+        <constraints nullable="true" unique="false"/>
+      </column>    
+	  <column name="latitude" type="int"> 
+        <constraints nullable="true" unique="false"/>
+      </column>   
+	  <column name="longitude" type="int"> 
+        <constraints nullable="true" unique="false"/>
+      </column>
+      <column name="valid_from" type="datetime">
+        <constraints nullable="true" unique="false"/>
+      </column>
+      <column name="valid_to" type="datetime">
+        <constraints nullable="true" unique="false"/>
+      </column>         
+      <column name="address_type_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>                                                                                                                                      
+    </createTable>   
+         
+      
+  </changeSet>
+</databaseChangeLog>

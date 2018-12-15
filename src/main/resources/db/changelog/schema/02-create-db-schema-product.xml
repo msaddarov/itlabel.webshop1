@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+  <changeSet id="02" author="msaddarov">
+  
+  <createTable tableName="manufacturer" remarks="A table to contain information about manufacturer">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="name" type="varchar(255)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+      <column name="logo" type="varchar(255)">
+        <constraints nullable="true" unique="false"/>
+      </column>
+	  <column name="description" type="varchar(400)">
+        <constraints nullable="true" unique="false"/>
+      </column>
+    </createTable>
+    
+    <createTable tableName="product" remarks="A table to contain all products">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="name" type="varchar(255)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+      <column name="sku" type="varchar(255)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+		<column name="description" type="clob">
+        <constraints nullable="true" unique="false"/>
+      </column>
+	  <column name="price" type="decimal">
+        <constraints nullable="true" unique="false"/>
+      </column>
+       <column name="stock" type="decimal">
+        <constraints nullable="true" unique="false"/>
+      </column>
+       <column name="created_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="updated_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="currency" type="varchar(10)">
+        <constraints nullable="true" unique="false"/>
+      </column>
+      <column name="manufacturer_id" type="bigint">
+        <constraints nullable="true" unique="false"/>
+      </column>      
+    </createTable>
+
+    <addForeignKeyConstraint baseTableName="product" baseColumnNames="manufacturer_id"
+      constraintName="manufacturer_id_fk"
+      referencedTableName="manufacturer" referencedColumnNames="id"/>
+      
+      
+ 	<createTable tableName="category" remarks="A table to contain all categories">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="parent_id" type="bigint">
+        <constraints nullable="true" unique="false"/>
+      </column>
+      <column name="name" type="varchar(255)">
+        <constraints nullable="false" unique="true"/>
+      </column>
+	  <column name="depth" type="int">
+        <constraints nullable="false" unique="false"/>
+      </column>    
+       <column name="created_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="updated_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+    </createTable>
+    
+    <createTable tableName="category_product" remarks="A table links categories with products">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="category_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="product_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>      
+       <column name="created_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="updated_at" type="datetime">
+        <constraints nullable="false" unique="false"/>
+      </column>
+    </createTable>
+    
+
+    <addForeignKeyConstraint baseTableName="category_product" baseColumnNames="category_id"
+      constraintName="category_id_fk"
+      referencedTableName="category" referencedColumnNames="id"/>
+
+    <addForeignKeyConstraint baseTableName="category_product" baseColumnNames="product_id"
+      constraintName="product_id_fk"
+      referencedTableName="product" referencedColumnNames="id"/>      
+      
+      
+      
+    <createTable tableName="product_image" remarks="all the images for particular product">
+      <column name="id" type="bigint">
+        <constraints nullable="false" unique="true" primaryKey="true"/>
+      </column>
+      <column name="product_id" type="bigint">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="image" type="varchar(255)">
+        <constraints nullable="false" unique="false"/>
+      </column>
+      <column name="sort_order" type="bigint">
+        <constraints nullable="true" unique="false"/>
+      </column>
+    </createTable>
+    
+    <addForeignKeyConstraint baseTableName="product_image" baseColumnNames="product_id"
+      constraintName="product_id_fk"
+      referencedTableName="product" referencedColumnNames="id"/>      
+      
+      
+  
+  </changeSet>
+</databaseChangeLog>      
