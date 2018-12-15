@@ -17,7 +17,7 @@ import com.itlabel.project.webshop1.persistence.model.Product;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ProductsManagerTest {
+public class ProductDAOTests {
 
 	
 	  @Autowired
