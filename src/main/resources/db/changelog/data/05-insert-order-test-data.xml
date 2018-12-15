@@ -23,19 +23,19 @@
     </insert>
    
     <insert tableName="order_status">
-      <column name="id" value="2"/>
+      <column name="id" value="3"/>
       <column name="code" value="DELIVERY"/>
       <column name="description" value="Delivery"/>
     </insert>
     
-     <insert tableName="order_status">
-      <column name="id" value="3"/>
+     <insert tableName="order_status"> 
+      <column name="id" value="4"/>
       <column name="code" value="DELIVERED"/>
       <column name="description" value="Delivered"/>
     </insert>
     
      <insert tableName="order_status">
-      <column name="id" value="4"/>
+      <column name="id" value="5"/>
       <column name="code" value="ARHIVED"/>
       <column name="description" value="Archived"/>
     </insert>    
@@ -63,7 +63,7 @@
       <column name="order_id" valueNumeric="1"/>
       <column name="quantity" valueNumeric="1"/>
       <column name="price" valueNumeric="23.34"/>
-      <column name="currency" valueNumeric="USD"/>
+      <column name="currency" value="USD"/>
     </insert>
     
     

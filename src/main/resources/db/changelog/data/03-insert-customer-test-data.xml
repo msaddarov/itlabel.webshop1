@@ -15,7 +15,7 @@
       <column name="gender" value="male"/>
       <column name="first_name" value="John"/>
       <column name="last_name" value="Smith"/>
-      <column name="DOB" value="01/01/1978"/>
+      <column name="DOB" value="1978-01-03"/>
       <column name="email" value="john.smith99999@gmail.com"/>
       <column name="phone" value="(+44) 23232322323232 (x23)"/>
       <column name="fax" value="(+44) 2343 3444 3 (x23)"/>
@@ -28,7 +28,7 @@
       <column name="gender" value="male"/>
       <column name="first_name" value="Robert"/>
       <column name="last_name" value="Brown"/>
-      <column name="DOB" value="11/02/1956"/>
+      <column name="DOB" value="1983-08-11"/>
       <column name="email" value="bbrown99999@gmail.com"/>
       <column name="phone" value="(+44) 23232344 (x23)"/>
       <column name="fax" value="(+44) 2234 3444 3 (x23)"/>

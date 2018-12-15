@@ -69,8 +69,8 @@ public class Product {
 		return SKU;
 	}
 
-	public void setSKU(String sKU) {
-		SKU = sKU;
+	public void setSKU(String sku) {
+		this.SKU = sku;
 	}
 
 	public String getDescription() {

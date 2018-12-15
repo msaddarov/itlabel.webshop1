@@ -127,7 +127,7 @@
     </createTable>
     
     <addForeignKeyConstraint baseTableName="product_image" baseColumnNames="product_id"
-      constraintName="product_id_fk"
+      constraintName="product_image_pid_fk"
       referencedTableName="product" referencedColumnNames="id"/>      
       
       

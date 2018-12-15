@@ -12,7 +12,7 @@
       <column name="id" type="bigint">
         <constraints nullable="false" unique="true" primaryKey="true"/>
       </column>
-      <column name="code" type="varchar(10)">
+      <column name="code" type="varchar(50)">
         <constraints nullable="false" unique="false"/>
       </column>
       <column name="description" type="varchar(400)">
@@ -51,6 +51,23 @@
       </column>
      </createTable> 
      
+      <addForeignKeyConstraint baseTableName="order" baseColumnNames="customer_id"
+      	constraintName="order_cust_id_fk"
+      	referencedTableName="customer" referencedColumnNames="id"/>    
+      
+      <addForeignKeyConstraint baseTableName="order" baseColumnNames="billing_address_id"
+      	constraintName="order_billaddr_id_fk"
+      	referencedTableName="address" referencedColumnNames="id"/>    
+      
+      <addForeignKeyConstraint baseTableName="order" baseColumnNames="delivery_address_id"
+      	constraintName="order_delivaddr_id_fk"
+      	referencedTableName="address" referencedColumnNames="id"/>    
+      
+      <addForeignKeyConstraint baseTableName="order" baseColumnNames="order_status_id"
+      	constraintName="order_ordstatus_id_fk"
+      	referencedTableName="order_status" referencedColumnNames="id"/>    
+      	      
+      
      <createTable tableName="order_product" remarks="order status"> <!-- no tax support -->
       <column name="id" type="bigint">
         <constraints nullable="false" unique="true" primaryKey="true"/>
@@ -71,6 +88,16 @@
         <constraints nullable="true" unique="false"/>
       </column>      
     </createTable>  
+    
+    
+     <addForeignKeyConstraint baseTableName="order_product" baseColumnNames="product_id"
+      	constraintName="order_product_pid_fk"
+      	referencedTableName="product" referencedColumnNames="id"/>    
+      
+     <addForeignKeyConstraint baseTableName="order_product" baseColumnNames="order_id"
+      	constraintName="order_product_ordid_fk"
+      	referencedTableName="order" referencedColumnNames="id"/>    
+      	      
     
   </changeSet>
 </databaseChangeLog>

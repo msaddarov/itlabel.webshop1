@@ -8,8 +8,8 @@
 
   <include file="schema/01-create-db-schema-common.xml" relativeToChangelogFile="true"/>
   <include file="schema/02-create-db-schema-product.xml" relativeToChangelogFile="true"/>
-  <include file="schema/03-create-db-schema-cart.xml" relativeToChangelogFile="true"/>
-  <include file="schema/04-create-db-schema-customer.xml" relativeToChangelogFile="true"/>
+  <include file="schema/03-create-db-schema-customer.xml" relativeToChangelogFile="true"/>
+  <include file="schema/04-create-db-schema-cart.xml" relativeToChangelogFile="true"/>
   <include file="schema/05-create-db-schema-order.xml" relativeToChangelogFile="true"/>
   
   <include file="data/01-insert-products-test-data.xml" relativeToChangelogFile="true"/>

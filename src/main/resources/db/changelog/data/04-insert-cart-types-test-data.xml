@@ -15,12 +15,12 @@
       <column name="name" value="initialized"/>
     </insert>
 
-    <insert tableName="address_type">
+    <insert tableName="cart_status">
       <column name="id" value="2"/>
       <column name="name" value="ordered"/>
     </insert>
     
-    <insert tableName="address_type">
+    <insert tableName="cart_status">
       <column name="id" value="3"/>
       <column name="name" value="archived"/>
     </insert>

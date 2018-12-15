@@ -18,10 +18,10 @@
 
             <#list products as product>
                 <tr>
-                    <td>${product.id}</td> 
-                    <td>${product.name}</td> 
-                    <td>${product.sku}</td>
-                    <td>${product.description}</td>
+                    <td>${product.id?if_exists}</td> 
+                    <td>${product.name?if_exists}</td> 
+                    <td>${product.sku?if_exists}</td>
+                    <td>${product.description?if_exists}</td>
                 </tr>
             </#list>        
         </table>  
