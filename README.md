@@ -10,3 +10,4 @@ Webshop1 Training Course for ITLabel.
 - [ ] Add state machines
 - [ ] Add internal queue
 - [ ] Add Adapters
+- [ ] Add Full text search

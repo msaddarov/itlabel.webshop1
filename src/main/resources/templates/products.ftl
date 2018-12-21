@@ -18,7 +18,7 @@
 
             <#list products as product>
                 <tr>
-                    <td>${product.id?if_exists}</td> 
+                    <td id='productLD'>${product.id?if_exists}</td> 
                     <td>${product.name?if_exists}</td> 
                     <td>${product.sku?if_exists}</td>
                     <td>${product.description?if_exists}</td>

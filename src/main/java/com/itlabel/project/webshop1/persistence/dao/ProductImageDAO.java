@@ -6,7 +6,7 @@ import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.itlabel.project.webshop1.persistence.model.Product;
+import com.itlabel.project.webshop1.persistence.model.ProductImage;
 import com.itlabel.project.webshop1.persistence.repository.ProductImageRepository;
 
 @Component
@@ -19,7 +19,7 @@ public class ProductImageDAO
 	    this.repo = repo;
 	  }
 
-	  public Stream<Product> getAll() {
+	  public Stream<ProductImage> getAll() {
 	    return StreamSupport.stream(repo.findAll().spliterator(), true);
 	  }
 }
