@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order_status")
-public class OrderStatus {
+@Table(name = "request_status")
+public class RequestStatus {
 	 
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +21,7 @@ public class OrderStatus {
 		@Column(nullable = false, unique = false, name = "description")
 		private String description;
 		
-		 protected OrderStatus() {
+		 protected RequestStatus() {
 			    // for JPA
 		 }
 

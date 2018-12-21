@@ -14,28 +14,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.itlabel.project.webshop1.persistence.model.Order;
+import com.itlabel.project.webshop1.persistence.model.RequestProduct;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class OrderDAOTest {
+public class RequestProductDAOTest {
 
-	 private static final Logger logger = LogManager.getLogger(OrderDAOTest.class);
+	 private static final Logger logger = LogManager.getLogger(RequestProductDAOTest.class);
 	 
 	  @Autowired
-	  private OrderDAO manager;
+	  private RequestProductDAO manager;
 	
 	  @Test
 	  public void getAllReturnsDataFromDatabase()  
 	  {
-	    List<Order> objects = manager.getAll().collect(Collectors.toList());
+	    List<RequestProduct> objects = manager.getAll().collect(Collectors.toList());
 	    
 	    assertFalse(objects.isEmpty());
 	    
 	    assertEquals(1, objects.size());
 	    	    
-
+	 
 	  }
 }
-
-BROKEN

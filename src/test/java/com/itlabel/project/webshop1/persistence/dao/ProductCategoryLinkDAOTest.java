@@ -14,25 +14,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.itlabel.project.webshop1.persistence.model.OrderStatus;
+import com.itlabel.project.webshop1.persistence.model.ProductCategoryLink;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class OrderStatusDAOTest {
+public class ProductCategoryLinkDAOTest {
 
-	 private static final Logger logger = LogManager.getLogger(OrderStatusDAOTest.class);
+	 private static final Logger logger = LogManager.getLogger(ProductCategoryLinkDAOTest.class);
 	 
 	  @Autowired
-	  private OrderStatusDAO manager;
+	  private ProductCategoryLinkDAO manager;
 	
 	  @Test
 	  public void getAllReturnsDataFromDatabase()  
 	  {
-	    List<OrderStatus> objects = manager.getAll().collect(Collectors.toList());
+	    List<ProductCategoryLink> objects = manager.getAll().collect(Collectors.toList());
 	    
 	    assertFalse(objects.isEmpty());
 	    
-	    assertEquals(5, objects.size());
+	    assertEquals(4, objects.size());
 
 	    
 	  }

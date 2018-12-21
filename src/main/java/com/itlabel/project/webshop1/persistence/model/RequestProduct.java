@@ -8,21 +8,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order_product")
-public class OrderProduct {
+@Table(name = "request_product")
+public class RequestProduct {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column(nullable = false, unique = false, name = "code")
-	private String code;
-
 	@Column(nullable = false, unique = false, name = "product_id")
 	private Integer productID;
 	
-	@Column(nullable = false, unique = false, name = "order_id")
-	private Integer orderID;
+	@Column(nullable = false, unique = false, name = "request_id")
+	private Integer requestID;
 	
 	@Column(nullable = false, unique = false, name = "quantity")
 	private Integer quantity;
@@ -34,7 +31,7 @@ public class OrderProduct {
 	private String currency;
 	
 	
-	 protected OrderProduct() {
+	 protected RequestProduct() {
 		    // for JPA
 	 }
 
@@ -49,16 +46,6 @@ public class OrderProduct {
 	}
 
 
-	public String getCode() {
-		return code;
-	}
-
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-
 	public Integer getProductID() {
 		return productID;
 	}
@@ -69,13 +56,13 @@ public class OrderProduct {
 	}
 
 
-	public Integer getOrderID() {
-		return orderID;
+	public Integer getRequestID() {
+		return requestID;
 	}
 
 
-	public void setOrderID(Integer orderID) {
-		this.orderID = orderID;
+	public void setRequestID(Integer requestID) {
+		this.requestID = requestID;
 	}
 
 

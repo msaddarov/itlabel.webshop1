@@ -8,42 +8,42 @@
 
   <changeSet id="23" author="msaddarov">
   
-    <comment>Inserting order status</comment>
+    <comment>Inserting request status</comment>
     
-    <insert tableName="order_status">
+    <insert tableName="request_status">
       <column name="id" value="1"/>
       <column name="code" value="INIT"/>
       <column name="description" value="Initialized"/>
     </insert>
 
-    <insert tableName="order_status">
+    <insert tableName="request_status">
       <column name="id" value="2"/>
       <column name="code" value="INPROGRESS"/>
       <column name="description" value="In Progress"/>
     </insert>
    
-    <insert tableName="order_status">
+    <insert tableName="request_status">
       <column name="id" value="3"/>
       <column name="code" value="DELIVERY"/>
       <column name="description" value="Delivery"/>
     </insert>
     
-     <insert tableName="order_status"> 
+     <insert tableName="request_status"> 
       <column name="id" value="4"/>
       <column name="code" value="DELIVERED"/>
       <column name="description" value="Delivered"/>
     </insert>
     
-     <insert tableName="order_status">
+     <insert tableName="request_status">
       <column name="id" value="5"/>
       <column name="code" value="ARHIVED"/>
       <column name="description" value="Archived"/>
     </insert>    
     
     
-     <comment>Inserting order</comment>
+     <comment>Inserting request</comment>
     
-    <insert tableName="order">
+    <insert tableName="request">
       <column name="id" value="1"/>
       <column name="customer_id" valueNumeric="1"/>
       <column name="reference" value="ORDER-HD-092A10-A1)"/>
@@ -51,16 +51,16 @@
       <column name="delivery_name" value="John Smith"/>
       <column name="billing_address_id" valueNumeric="1"/>
       <column name="purchase_date" valueDate="2018-08-09T13:14:15"/>
-      <column name="order_status_id" valueNumeric="1"/>
+      <column name="request_status_id" valueNumeric="1"/>
       <column name="delivery_address_id" valueNumeric="1"/>
     </insert>
     
-     <comment>Inserting order product</comment>
+     <comment>Inserting request product</comment>
     
-    <insert tableName="order_product">
+    <insert tableName="request_product">
       <column name="id" value="1"/>
       <column name="product_id" valueNumeric="1"/>
-      <column name="order_id" valueNumeric="1"/>
+      <column name="request_id" valueNumeric="1"/>
       <column name="quantity" valueNumeric="1"/>
       <column name="price" valueNumeric="23.34"/>
       <column name="currency" value="USD"/>

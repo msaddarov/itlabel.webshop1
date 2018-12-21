@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order")
-public class Order {
+@Table(name = "request")
+public class Request {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,8 +41,8 @@ public class Order {
 	private LocalDateTime purchaseDate;
 	
 
-	@Column(nullable = false, unique = false, name = "order_status_id")
-	private Integer orderStatusID;
+	@Column(nullable = false, unique = false, name = "request_status_id")
+	private Integer requestStatusID;
 	
 
 	@Column(nullable = false, unique = false, name = "delivery_address_id")
@@ -50,7 +50,7 @@ public class Order {
 	
 	
 	
-	 protected Order() {
+	 protected Request() {
 		    // for JPA
 	 }
 
@@ -140,14 +140,14 @@ public class Order {
 
 
 
-	public Integer getOrderStatusID() {
-		return orderStatusID;
+	public Integer getRequestStatusID() {
+		return requestStatusID;
 	}
 
 
 
-	public void setOrderStatusID(Integer orderStatusID) {
-		this.orderStatusID = orderStatusID;
+	public void setRequestStatusID(Integer requestStatusID) {
+		this.requestStatusID = requestStatusID;
 	}
 
 

@@ -8,7 +8,7 @@
 
   <changeSet id="24" author="msaddarov">
   
-   <createTable tableName="order_status" remarks="order status">
+   <createTable tableName="request_status" remarks="request status">
       <column name="id" type="bigint">
         <constraints nullable="false" unique="true" primaryKey="true"/>
       </column>
@@ -21,7 +21,7 @@
     </createTable>  
     
         
-    <createTable tableName="order" remarks="order">
+    <createTable tableName="request" remarks="request">
       <column name="id" type="bigint">
         <constraints nullable="false" unique="true" primaryKey="true"/>
       </column>
@@ -43,39 +43,40 @@
       <column name="purchase_date" type="datetime">
         <constraints nullable="false" unique="false"/>
       </column>
-      <column name="order_status_id" type="bigint">
+      <column name="request_status_id" type="bigint">
         <constraints nullable="false" unique="false"/>
       </column>
       <column name="delivery_address_id" type="bigint">
         <constraints nullable="false" unique="false"/>
-      </column>
+      </column> 
      </createTable> 
      
-      <addForeignKeyConstraint baseTableName="order" baseColumnNames="customer_id"
-      	constraintName="order_cust_id_fk"
+     
+      <addForeignKeyConstraint baseTableName="request" baseColumnNames="customer_id"
+      	constraintName="request_cust_id_fk"
       	referencedTableName="customer" referencedColumnNames="id"/>    
       
-      <addForeignKeyConstraint baseTableName="order" baseColumnNames="billing_address_id"
-      	constraintName="order_billaddr_id_fk"
+      <addForeignKeyConstraint baseTableName="request" baseColumnNames="billing_address_id"
+      	constraintName="request_billaddr_id_fk"
       	referencedTableName="address" referencedColumnNames="id"/>    
       
-      <addForeignKeyConstraint baseTableName="order" baseColumnNames="delivery_address_id"
-      	constraintName="order_delivaddr_id_fk"
+      <addForeignKeyConstraint baseTableName="request" baseColumnNames="delivery_address_id"
+      	constraintName="request_delivaddr_id_fk"
       	referencedTableName="address" referencedColumnNames="id"/>    
       
-      <addForeignKeyConstraint baseTableName="order" baseColumnNames="order_status_id"
-      	constraintName="order_ordstatus_id_fk"
-      	referencedTableName="order_status" referencedColumnNames="id"/>    
+      <addForeignKeyConstraint baseTableName="request" baseColumnNames="request_status_id"
+      	constraintName="request_ordstatus_id_fk"
+      	referencedTableName="request_status" referencedColumnNames="id"/>    
       	      
       
-     <createTable tableName="order_product" remarks="order status"> <!-- no tax support -->
+     <createTable tableName="request_product" remarks="request status"> <!-- no tax support -->
       <column name="id" type="bigint">
         <constraints nullable="false" unique="true" primaryKey="true"/>
       </column>
       <column name="product_id" type="bigint">
         <constraints nullable="false" unique="false"/>
       </column>
-      <column name="order_id" type="bigint">
+      <column name="request_id" type="bigint">
         <constraints nullable="false" unique="false"/>
       </column>      
       <column name="quantity" type="int">
@@ -90,13 +91,13 @@
     </createTable>  
     
     
-     <addForeignKeyConstraint baseTableName="order_product" baseColumnNames="product_id"
-      	constraintName="order_product_pid_fk"
+     <addForeignKeyConstraint baseTableName="request_product" baseColumnNames="product_id"
+      	constraintName="request_product_pid_fk"
       	referencedTableName="product" referencedColumnNames="id"/>    
       
-     <addForeignKeyConstraint baseTableName="order_product" baseColumnNames="order_id"
-      	constraintName="order_product_ordid_fk"
-      	referencedTableName="order" referencedColumnNames="id"/>    
+     <addForeignKeyConstraint baseTableName="request_product" baseColumnNames="request_id"
+      	constraintName="request_product_ordid_fk"
+      	referencedTableName="request" referencedColumnNames="id"/>    
       	      
     
   </changeSet>

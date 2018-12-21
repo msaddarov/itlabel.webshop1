@@ -6,20 +6,20 @@ import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.itlabel.project.webshop1.persistence.model.OrderStatus;
-import com.itlabel.project.webshop1.persistence.repository.OrderStatusRepository;
+import com.itlabel.project.webshop1.persistence.model.RequestStatus;
+import com.itlabel.project.webshop1.persistence.repository.RequestStatusRepository;
 
 @Component
-public class OrderStatusDAO 
+public class RequestStatusDAO 
 {
-	private OrderStatusRepository repo;
+	private RequestStatusRepository repo;
 
 	  @Autowired
-	  public OrderStatusDAO(OrderStatusRepository repo) {
+	  public RequestStatusDAO(RequestStatusRepository repo) {
 	    this.repo = repo;
 	  }
 
-	  public Stream<OrderStatus> getAll() {
+	  public Stream<RequestStatus> getAll() {
 	    return StreamSupport.stream(repo.findAll().spliterator(), true);
 	  }
 }
