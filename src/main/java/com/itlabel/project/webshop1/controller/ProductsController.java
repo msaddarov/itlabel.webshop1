@@ -37,4 +37,22 @@ public class ProductsController
        return new ModelAndView("products", params);
 
 	}
+	
+	@RequestMapping("/johnybaba/order")
+	public ModelAndView baba1(Model model) 
+	{        
+       return new ModelAndView("johnybaba/order", new HashMap<>());
+	}
+	
+	@RequestMapping("/johnybaba/product_details")
+	public ModelAndView baba2(Model model) 
+	{        
+       return new ModelAndView("johnybaba/product_details", new HashMap<>());
+	}
+	
+	@RequestMapping("/johnybaba/products")
+	public ModelAndView baba3(Model model) 
+	{        
+       return new ModelAndView("johnybaba/products", new HashMap<>());
+	}
 }
