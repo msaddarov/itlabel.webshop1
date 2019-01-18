@@ -39,6 +39,12 @@ $(document).ready(function() {
 // jquery end
 </script>
 
+<#macro tst>
+ololo222333 344
+</#macro>
+
+<@tst/>
+
 </head>
 <body>
 <header class="section-header">

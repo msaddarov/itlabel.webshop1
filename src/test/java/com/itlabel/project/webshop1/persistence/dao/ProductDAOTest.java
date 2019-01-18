@@ -34,4 +34,17 @@ public class ProductDAOTest {
 	
 	    products.forEach(logger::info);
 	  }
+	  
+	  
+	  @Test
+	  public void testFindByCategory()  
+	  {
+		  List<Product> products = manager.findByCategory("1");
+		  
+		  assertFalse(products.isEmpty());
+		  assertEquals(2, products.size());	    
+		  assertFalse(!"EL-UR-12-F1".equals(products.get(1).getSKU()));
+		
+	
+	  }
 }

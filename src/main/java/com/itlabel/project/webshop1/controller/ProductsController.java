@@ -44,15 +44,15 @@ public class ProductsController
        return new ModelAndView("johnybaba/order", new HashMap<>());
 	}
 	
-	@RequestMapping("/johnybaba/product_details")
+	@RequestMapping("/johnybaba/products")
 	public ModelAndView baba2(Model model) 
 	{        
-       return new ModelAndView("johnybaba/product_details", new HashMap<>());
+       return new ModelAndView("johnybaba/products", new HashMap<>());
 	}
 	
-	@RequestMapping("/johnybaba/products")
+	@RequestMapping("/johnybaba/products_list")
 	public ModelAndView baba3(Model model) 
 	{        
-       return new ModelAndView("johnybaba/products", new HashMap<>());
+       return new ModelAndView("johnybaba/products_list", new HashMap<>());
 	}
 }
