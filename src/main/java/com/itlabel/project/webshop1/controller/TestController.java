@@ -21,7 +21,7 @@ public class TestController
 	private ProductDAO productsManager;
 	
 	@RequestMapping("/test/products")
-	public ModelAndView index(@RequestParam("categoryID") String categoryID) 
+	public ModelAndView productsByCategoryID(@RequestParam("categoryID") String categoryID) 
 	{
 		
 		List<Product> products = productsManager.findByCategory(categoryID);
