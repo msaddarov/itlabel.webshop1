@@ -8,7 +8,7 @@
 <body>
   <h2>List of products</h2>
         
-        <table>
+        <table border='1'>
             <tr>
                 <th>Id</th>  
                 <th>Name</th>  

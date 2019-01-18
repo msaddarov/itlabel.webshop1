@@ -26,10 +26,10 @@ public class TestController
 		
 		List<Product> products = productsManager.findByCategory(categoryID);
 		
-	    Map<String, Object> params = new HashMap<>();
-        params.put("products", products);
-	   
-       return new ModelAndView("products", params);
+		Map<String, Object> params = new HashMap<>();
+		params.put("products", products);
+			   
+		return new ModelAndView("products", params);
 	}
 	
 }
